@@ -7,7 +7,8 @@
 # You can use "axel" instead of default "wget", just install axel first and call this
 # with axel parameter.
 
-FONT_PATH="$HOME/.fonts/truetype/"
+FONT_PATH="$HOME/.local/share/fonts/truetype/"
+
 function detect(){
   type -P $1 >/dev/null  || { echo "Require $1 but not installed. Aborting." >&2; exit 1; }
 }
@@ -72,7 +73,7 @@ fonts[$I]=$QUIT
 
 function mainmenu(){
 	PS3="Your choice ($I for quit): "
-        echo "* All fonts are going to be install in '.fonts' directory in your home."
+        echo "* All fonts are going to be install in '.local/share/fonts' directory in your home."
 	echo "Choose which fonts should be install or choose to quit"
 	select fnt in ${fonts[*]};
 	do
